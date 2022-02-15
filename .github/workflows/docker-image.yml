@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-
+    paths:
+      - 'src/**'
+      - 'Dockerfile'
 jobs:
   Build:
     name: Publish Docker Image
@@ -27,3 +29,5 @@ jobs:
         with:
           push: true
           context: .
+          file: Dockerfile
+          tags: ghcr.io/devramsean0/glados:latest
