@@ -10,7 +10,7 @@ export class UserCommand extends SubCommandPluginCommand {
 		const embed = new MessageEmbed()
 		.setColor('RANDOM')
 		.setTitle('MUSIC')
-		.setDescription(`Music commands \n # ${process.env.DEFAULT_PREFIX} stillalive | the still alive song`)
+		.setDescription(`Music commands \n # ${process.env.DEFAULT_PREFIX} stillalive | the still alive song \n # ${process.env.DEFAULT_PREFIX} wantyougone | the want you gone song`)
 		message.channel.send({ embeds: [embed]})
 	}
 }
