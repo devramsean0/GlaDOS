@@ -1,7 +1,8 @@
-const { Listener } = require('@sapphire/framework');
+import { Listener } from '@sapphire/framework';
+import type { Message } from 'discord.js';
 
-class UserEvent extends Listener {
-	run(old, message) {
+export class UserEvent extends Listener {
+	public run(old: Message, message: Message) {
 		// If the contents of both messages are the same, return:
 		if (old.content === message.content) return;
 
@@ -18,5 +19,3 @@ class UserEvent extends Listener {
 		this.container.client.emit('preMessageParsed', message);
 	}
 }
-
-exports.UserEvent = UserEvent;
