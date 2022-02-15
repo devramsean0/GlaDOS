@@ -1,7 +1,7 @@
 import type { ListenerOptions, PieceContext } from '@sapphire/framework';
 import { Listener, Store } from '@sapphire/framework';
 import { blue, gray, green, magenta, magentaBright, white, yellow } from 'colorette';
-import { client } from '..';
+import { status } from '../lib/status';
 
 const dev = process.env.NODE_ENV !== 'production';
 
@@ -18,7 +18,7 @@ export class UserEvent extends Listener {
 	public run() {
 		this.printBanner();
 		this.printStoreDebugInformation();
-		client.user?.setActivity('Portal 1 & 2', { type: 'PLAYING' });
+		status()
 	}
 
 	private printBanner() {
